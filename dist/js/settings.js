@@ -1,6 +1,5 @@
-const deployID = '';
-const sheetID = ``;
-const oldSheetID = ``;
+const deployID = 'AKfycbwWjHRUpYDksPbcMu1hXfN_ysNcIa-8kDHPAyGSNs88gbXnkZTwZVAXsPASk7yolZUv';
+const sheetID = `1XZbN_wy7qA2m-SPTsD6oDoOQF4sFzAWdUwrmKTSbpmQ`;
 const successMessage = `<p class="fullWidth">Submission successful!</p>
 <button onclick="location.reload();" type="button" class="fullWidth submit">Back to form</button>`;
 const threadTags = ["vital", "priority", "rapidfire", "romantic", "family", "friends", "coworkers"];
