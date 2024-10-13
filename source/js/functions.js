@@ -46,38 +46,37 @@ function initMenus() {
         });
 
         data.forEach((site, i) => {
-            let base = ``;
-            console.log(window.location.href);
-            if(window.location.href.includes('file:')) {
-                base = `.`
+            let prefix = `..`;
+            if (document.querySelector('body').classList.contains('index')) {
+                prefix = '.';
             }
             if(i === 0) {
                 document.querySelector('.subnav[data-menu="sites"] .subnav--inner')
                     .insertAdjacentHTML('beforeend', `<strong>${site.Status}</strong><a href="${site.URL}" target="_blank" class="${site.Status}">${site.Site}</a>`);
                 document.querySelector('.subnav[data-menu="characters"] .subnav--inner')
-                    .insertAdjacentHTML('beforeend', `<strong>${site.Status}</strong><a href="${base}${!window.location.href.includes('characters') ? '/characters' : ''}/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
+                    .insertAdjacentHTML('beforeend', `<strong>${site.Status}</strong><a href="${prefix}/characters/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
                 document.querySelector('.subnav[data-menu="threads"] .subnav--inner')
-                    .insertAdjacentHTML('beforeend', `<strong>${site.Status}</strong><a href="${base}${!window.location.href.includes('threads') ? '/threads' : ''}/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
+                    .insertAdjacentHTML('beforeend', `<strong>${site.Status}</strong><a href="${prefix}/threads/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
                 document.querySelector('.subnav[data-menu="stats"] .subnav--inner')
-                    .insertAdjacentHTML('beforeend', `<strong>${site.Status}</strong><a href="${base}${!window.location.href.includes('stats') ? '/stats' : ''}/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
+                    .insertAdjacentHTML('beforeend', `<strong>${site.Status}</strong><a href="${prefix}/stats/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
             } else if(site.Status !== data[i - 1].Status) {
                 document.querySelector('.subnav[data-menu="sites"] .subnav--inner')
                     .insertAdjacentHTML('beforeend', `<strong>${site.Status}</strong><a href="${site.URL}" target="_blank" class="${site.Status}">${site.Site}</a>`);
                 document.querySelector('.subnav[data-menu="characters"] .subnav--inner')
-                    .insertAdjacentHTML('beforeend', `<strong>${site.Status}</strong><a href="${base}${!window.location.href.includes('characters') ? '/characters' : ''}/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
+                    .insertAdjacentHTML('beforeend', `<strong>${site.Status}</strong><a href="${prefix}/characters/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
                 document.querySelector('.subnav[data-menu="threads"] .subnav--inner')
-                    .insertAdjacentHTML('beforeend', `<strong>${site.Status}</strong><a href="${base}${!window.location.href.includes('threads') ? '/threads' : ''}/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
+                    .insertAdjacentHTML('beforeend', `<strong>${site.Status}</strong><a href="${prefix}/threads/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
                 document.querySelector('.subnav[data-menu="stats"] .subnav--inner')
-                    .insertAdjacentHTML('beforeend', `<strong>${site.Status}</strong><a href="${base}${!window.location.href.includes('stats') ? '/stats' : ''}/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
+                    .insertAdjacentHTML('beforeend', `<strong>${site.Status}</strong><a href="${prefix}/stats/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
             } else {
                 document.querySelector('.subnav[data-menu="sites"] .subnav--inner')
                     .insertAdjacentHTML('beforeend', `<a href="${site.URL}" target="_blank" class="${site.Status}">${site.Site}</a>`);
                 document.querySelector('.subnav[data-menu="characters"] .subnav--inner')
-                    .insertAdjacentHTML('beforeend', `<a href="${base}${!window.location.href.includes('characters') ? '/characters' : ''}/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
+                    .insertAdjacentHTML('beforeend', `<a href="${prefix}/characters/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
                 document.querySelector('.subnav[data-menu="threads"] .subnav--inner')
-                    .insertAdjacentHTML('beforeend', `<a href="${base}${!window.location.href.includes('threads') ? '/threads' : ''}/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
+                    .insertAdjacentHTML('beforeend', `<a href="${prefix}/threads/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
                 document.querySelector('.subnav[data-menu="stats"] .subnav--inner')
-                    .insertAdjacentHTML('beforeend', `<a href="${base}${!window.location.href.includes('stats') ? '/stats' : ''}/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
+                    .insertAdjacentHTML('beforeend', `<a href="${prefix}/stats/${site.ID}.html" class="${site.Status}">${site.Site}</a>`);
             }
         });
     });
